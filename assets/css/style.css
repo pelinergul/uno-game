@@ -1,0 +1,94 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    height: 100%;
+}
+body {
+    -webkit-font-smoothing: antialiased;
+}
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-block: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 100px;
+}
+.card {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 60px;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #F0F8FF;
+    font-size: 40px;
+    transition:100ms ease-in-out;
+}
+.card:hover {
+    /* transform: rotateY(-5deg); */
+    transform: rotate(10deg);
+}
+.player {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30px, max-content));
+    max-width: 360px;
+    margin-inline: auto;
+}
+.card.back {
+    background: url(../img/uno.svg) center center no-repeat, #F0F8FF;
+    background-size: 50px auto;
+}
+.middle {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+}
+.two {
+    transform: rotate(90deg);
+}
+.four {
+    transform: rotate(-90deg);
+}
+.card.green {
+    background-color: #43c94d;
+    background-image: linear-gradient(45deg, #43c94d 0%, #7dffa1 100%);
+
+}
+.card.yellow {
+    background-color: #fff657;
+background-image: linear-gradient(62deg, #fff657 0%, #ffcb54 100%);
+}
+.card.blue { 
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+}
+.card.red {
+    background-color: #e82020;
+    background-image: linear-gradient(160deg, #e82020 0%, #f05b5f 100%);
+}
+.table {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+.table-cards {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.table-cards .card {
+    position: absolute;
+}
+.table-cards .card:nth-child(n) {
+    transform: rotate(10deg);
+}
+.table-cards .card:nth-child(2n) {
+    transform: rotate(-20deg);
+}
